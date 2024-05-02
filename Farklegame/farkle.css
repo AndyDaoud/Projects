@@ -62,16 +62,7 @@ body{
 	width:20%;
 	margin-left: 160px;
 }
-.roll{
-}
-.roll:hover{
-	
-}
-.bank{
-}
-.bank:hover{
-	
-}
+
 .transparent{
 	/*For dice that are selected*/
 	opacity: 0.50;
