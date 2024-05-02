@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="farkle.css">
+	<script type="text/javascript" src="farkle.js"></script>
+	<title>Farkle!</title>
+</head>
+
+<body onload="initializeDice()">
+	<header class="row header">Welcome to Farkle!</header>
+	<div class = "urlink"><a href="https://www.wikihow.com/Play-Farkle" target="_blank">Game Rules</a></div>
+
+	<div class="row">
+		<!-- Dice images -->
+		<div class="dice"> 
+			<img src="images/1.png" id="die1" data-number="0" onclick="diceClick(this)">
+			<img src="images/2.png" id="die2" data-number="1" onclick="diceClick(this)">
+			<img src="images/3.png" id="die3" data-number="2" onclick="diceClick(this)">
+			<img src="images/4.png" id="die4" data-number="3" onclick="diceClick(this)">
+			<img src="images/5.png" id="die5" data-number="4" onclick="diceClick(this)">
+			<img src="images/6.png" id="die6" data-number="5" onclick="diceClick(this)">
+		</div>
+	</div>
+
+	<div class = "header" id="turn" style = "font-size: 30px;height:40px">Turn: Player 1</div>
+	<div class = "header" id="play" style = "font-size: 30px;height:40px; margin-bottom: 20px">Roll The Dice</div>
+
+	
+	<!-- Scoring -->
+	<div class = row>
+		<div class = "header column" style = "font-size: 20px; height:55px" id = "p1N">Player 1 </div>
+		<div class = "header column" style = "font-size: 20px; height:55px" id = "p2N">Player 2 </div>
+		<div class="column score" id="p1"> 0 </div>
+		<div class="column score" id="p2"> 0 </div>
+		<div class = "header column invisible" style = "font-size: 20px; height:55px" id = "p3N">Player 3 </div>
+		<div class = "header column invisible" style = "font-size: 20px; height:55px" id = "p4N">Player 4 </div>
+		<div class="column score invisible" id="p3"> 0 </div>
+		<div class="column score invisible" id="p4"> 0 </div>
+	</div>
+	<!-- Button row -->
+	<div class="row">
+		<button class="button roll column" onclick="roller()">Roll Dice</button>
+		<button class="button bank column" onclick="bankPoints()">Bank Score</button>
+	</div>
+</body>
+</html>
