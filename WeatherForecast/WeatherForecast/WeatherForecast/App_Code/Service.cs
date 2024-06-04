@@ -12,7 +12,18 @@ using System.Net;
 
 public class Service : IService
 {
+    /*
+     * Link to Json file where geographic coordinates can be found for 
+     * user given zip codes.
+     */
     public static string js = new WebClient().DownloadString("https://github.com/millbj92/US-Zip-Codes-JSON/blob/master/USCities.json?raw=true");
+
+    /*
+     * Retrieves longitude and latitude from Json file using zip code 
+     * and retrieves weather forecast from weather.gov api.  Reads the
+     * response stream and deserializes string data into an object of
+     * weather data.
+     */
     public List<Periods> GetForecast(string zip)
     {
         string api = @"https://api.weather.gov/points/" + GetLat(zip) + "," + GetLon(zip);
@@ -41,9 +52,11 @@ public class Service : IService
         var weafore = JsonConvert.DeserializeObject<WeatherData>(resper);
 		
         return weafore.properties.periods;
-
     }
     
+    /*
+     * Uses longitude and latitude with air polution api.  Deserializes data into air quality object.
+     */
     public Root GetAirQuality(string zip)
     {
         string key = "2d635575bff7dd3e424c48ec72010d61";
@@ -62,6 +75,9 @@ public class Service : IService
 
     }
 
+    /*
+     * Function used to retrieve longitude from Json file using zip code.
+     */
     public float GetLon(string zip)
     {
         int zipc = int.Parse(zip);
@@ -76,6 +92,10 @@ public class Service : IService
         return 0;
 
     }
+
+    /*
+     * Function used to retrieve latitude from Json file.
+     */
     public float GetLat(string zip)
     {
         int zipc = int.Parse(zip);
@@ -91,6 +111,9 @@ public class Service : IService
 
     }
 
+    /*
+     * Retrieve city name given zip code
+     */
     public string GetCity(string zip)
     {
         int zipc = int.Parse(zip);
@@ -106,7 +129,10 @@ public class Service : IService
 
     }
 
-
+    /*
+     * Class used for creating objects that store data from 
+     * Json file deserialized data.
+     */
     public class ZipCoor
     {
         public int zip_code { get; set; }

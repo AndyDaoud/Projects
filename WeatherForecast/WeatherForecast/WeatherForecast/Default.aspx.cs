@@ -8,26 +8,31 @@ using System.IO;
 using System.Net;
 using System.Web.UI.HtmlControls;
 using Newtonsoft.Json;
-
+/*
+ * Frontend code that handles button presses.
+ * Uses the developed web service to obtain city forecast and air
+ * quality data.  Then outputs the air quality and weeklong forecast 
+ * of the given url.
+ */
 public partial class _Default : System.Web.UI.Page
 {
-    protected string localHost = "http://localhost:54545";
+    
+    string localHost = HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority);
     protected void Page_Load(object sender, EventArgs e)
     {
-        HttpCookie cookie = Request.Cookies["myCookie"];
-        if(cookie != null)
-        {
-            TextBox1.Text = cookie["input"];
-        }
+       
     }
 
+    /*
+     * Button click function that takes input from textbox.
+     */
     protected void Button1_Click(object sender, EventArgs e)
     {
-        HttpCookie cookie = new HttpCookie("myCookie");
-        cookie["input"] = TextBox1.Text;
-        cookie.Expires = DateTime.Now.AddMinutes(1);
-        Response.Cookies.Add(cookie);
-		
+        /*
+         * Applies given zipcode to web service.  Reads the
+         * response stream and converts strings of data into
+         * objects.
+         */
         string url = @localHost + "/Service.svc/forecast?zip=" + TextBox1.Text;
         HttpWebRequest requ = (HttpWebRequest)WebRequest.Create(url);
         requ.ContentType = "application/json";
@@ -67,6 +72,10 @@ public partial class _Default : System.Web.UI.Page
         string readResponse4 = sreader4.ReadToEnd();
 
         Root airQuality = JsonConvert.DeserializeObject<Root>(readResponse4);
+
+        /*
+         * Display's data onto service page
+         */
 
         string output = "<br>City: " + readResponse3 + "<br>Coordinates: " + readResponse2 + "," + readResponse;
         output += "<br><br>Air Quality Index: " + airQuality.list[0].main.aqi;

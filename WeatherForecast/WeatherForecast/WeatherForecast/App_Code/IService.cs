@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
 
+
 [ServiceContract]
 public interface IService
 {
@@ -34,6 +35,9 @@ public interface IService
 
 }
 
+/*
+ * Classes used to store deserialized object data from API's and Json
+ */
 
 public class WeatherData
 {
