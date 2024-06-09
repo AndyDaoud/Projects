@@ -17,6 +17,7 @@ First, a database is required for the program to pull attorney information from.
 ![Initial database](https://github.com/AndyDaoud/Projects/assets/61570504/49fd87c0-38ec-4724-b710-bbff15d18c7c)
 
 The given attorney_list.csv file can be used, although the EMAIL entries must be filled. Once the database is created, fill in the info within the database module code.
+
 ![databaseinfo](https://github.com/AndyDaoud/Projects/assets/61570504/4b20b7a0-b556-4e94-ae32-33b72cb52493)
 
 The project requires an email to be used for sending cases.  It is suggested a new email account is made on gmail, as the code is currently set up to uses
