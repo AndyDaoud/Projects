@@ -22,16 +22,23 @@ The given attorney_list.csv file can be used, although the EMAIL entries must be
 
 The project requires an email to be used for sending cases.  It is suggested a new email account is made on gmail, as the code is currently set up to use
 gmail.  Make sure 2-factor authentication is enabled and create an app password.  Then replace 'APPEMAIL' with the email address and 'APPPASSWORD' with the app password.
+
 ![newemail](https://github.com/AndyDaoud/Projects/assets/61570504/486027b6-b39a-48f1-aafa-a969fc7ab6d2)
 
 Finally, the path of the directory to be monitered must be filled in. 
+
 ![directorypath](https://github.com/AndyDaoud/Projects/assets/61570504/eae19150-9ff5-460f-ae0e-1a4b9f80b31e)
 
 Once all of this is done, add the given case files into the monitored directory.  The databases will be updated with the new case numbers and an email will be sent to
 the assigned attorney.
 Initially:
+
 ![Initial database](https://github.com/AndyDaoud/Projects/assets/61570504/b236fb6f-0c44-4315-a147-49e6f7e2368b)
+
 After Case Assignment:
+
 ![databases after assignment](https://github.com/AndyDaoud/Projects/assets/61570504/7629a286-f8d6-4a53-aa21-eff173ff35e0)
+
 Email Recieved by Attorney:
+
 ![Case file sent](https://github.com/AndyDaoud/Projects/assets/61570504/c950a157-3525-42e7-97ab-5730c992c422)
