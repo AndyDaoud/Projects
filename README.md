@@ -20,7 +20,7 @@ The given attorney_list.csv file can be used, although the EMAIL entries must be
 
 ![databaseinfo](https://github.com/AndyDaoud/Projects/assets/61570504/4b20b7a0-b556-4e94-ae32-33b72cb52493)
 
-The project requires an email to be used for sending cases.  It is suggested a new email account is made on gmail, as the code is currently set up to uses
+The project requires an email to be used for sending cases.  It is suggested a new email account is made on gmail, as the code is currently set up to use
 gmail.  Make sure 2-factor authentication is enabled and create an app password.  Then replace 'APPEMAIL' with the email address and 'APPPASSWORD' with the app password.
 ![newemail](https://github.com/AndyDaoud/Projects/assets/61570504/486027b6-b39a-48f1-aafa-a969fc7ab6d2)
 
